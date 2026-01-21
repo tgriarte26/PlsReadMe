@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="font-mono grid grid-rows-[20px_3fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 bg-[#24292e]">
+    <div className="font-mono items-center justify-items-center min-h-screen gap-16 bg-[#24292e]">
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
         <div className="flex gap-4 items-center sm:flex-row">
         </div>
