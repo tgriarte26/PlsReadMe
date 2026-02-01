@@ -8,7 +8,7 @@ const MarkdownComponent = () => {
   return (
     <div>
       <MarkdownEditor markdownInput={markdownInput} setMarkdownInput={setMarkdownInput} />
-      <MarkdownPreview markdownInput={markdownInput} setMarkdownInput={setMarkdownInput} />
+      <MarkdownPreview markdownInput={markdownInput} />
     </div>
   )
 }
