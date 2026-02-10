@@ -8,6 +8,7 @@ export default function Body() {
   return (
     <div className="font-mono flex">
       <div className="float-left w-2/8 p-5 text-white bg-[#24292e]">
+        <div className="text-center text-2xl pb-2">Sections</div>
         <div className="border p-15 justify-items-center"></div>
       </div>
       <div className="float-left w-3/8 p-5 text-white bg-[#24292e]">
