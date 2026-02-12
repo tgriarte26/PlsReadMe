@@ -24,7 +24,7 @@ export default function Page() {
         </div>
         <div className="float-left w-4/10 p-5 text-white bg-[#24292e] flex flex-col">
           <div className="text-center text-2xl pb-2 select-none ">Editor</div>
-          <div className="flex-1 border-3 min-h-0 justify-items-center overflow-auto rounded">
+          <div className="flex-1 border-3 min-h-0 justify-items-center overflow-auto rounded hide-scrollbar">
             <MarkdownEditor
               markdownInput={markdownInput}
               setMarkdownInput={setMarkdownInput}

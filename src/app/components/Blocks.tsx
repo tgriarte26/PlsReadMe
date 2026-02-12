@@ -10,6 +10,9 @@ import {
   List,
   Link as LinkIcon,
   Plus,
+  BookOpen,
+  AlertCircle,
+  GitPullRequest,
 } from "lucide-react";
 
 interface BlocksPanelProps {
@@ -20,6 +23,74 @@ export default function Blocks({ onAddBlock }: BlocksPanelProps) {
   const [openCategory, setOpenCategory] = useState<string | null>(null);
 
   const blockCategories = [
+    {
+      category: "Templates",
+      blocks: [
+        {
+          label: "README Template",
+          markdown: `# Project Title
+
+## Description
+A brief description of your project.
+
+## Installation
+\`\`\`bash
+npm install
+\`\`\`
+
+## Usage
+\`\`\`bash
+npm start
+\`\`\`
+
+## Contributing
+Please submit pull requests.
+
+## License
+MIT
+`,
+          icon: BookOpen,
+        },
+        {
+          label: "Issue Template",
+          markdown: `## Issue Title
+
+**Describe the bug**
+A clear and concise description of what the bug is.
+
+**To Reproduce**
+Steps to reproduce the behavior:
+
+1. Go to '...'
+2. Click on '....'
+3. See error
+
+**Expected behavior**
+A clear description of what you expected to happen.
+
+**Screenshots**
+If applicable, add screenshots to help explain your problem.
+`,
+          icon: AlertCircle,
+        },
+        {
+          label: "Pull Request Template",
+          markdown: `## Pull Request Title
+
+**Description**
+A summary of the changes made.
+
+**Related Issue**
+Link to the issue this PR addresses.
+
+**Testing**
+Describe how this was tested.
+`,
+          icon: GitPullRequest,
+        },
+      ],
+    },
+
     {
       category: "Text",
       blocks: [
@@ -104,10 +175,12 @@ export default function Blocks({ onAddBlock }: BlocksPanelProps) {
               <span
                 className={`transition-transform duration-200 ${isOpen ? "rotate-45" : ""}`}
               >
-                <Plus className="font-semibold"size={20}/>
+                <Plus className="font-semibold" size={20} />
               </span>
             </div>
-            <div className={`grid transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${isOpen ? "grid-rows-[1fr] opacity-100 translate-y-0" : "grid-rows-[0fr] opacity-0 -translate-y-2"}`}>
+            <div
+              className={`grid transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] ${isOpen ? "grid-rows-[1fr] opacity-100 translate-y-0" : "grid-rows-[0fr] opacity-0 -translate-y-2"}`}
+            >
               <div className="overflow-hidden">
                 <div className="flex flex-col">
                   {cat.blocks.map((block) => {
@@ -119,9 +192,7 @@ export default function Blocks({ onAddBlock }: BlocksPanelProps) {
                         className="w-full flex items-center gap-3 bg-[#30363d] hover:bg-[#3c444d] p-4 transition mt-1.5 mb-1.5 rounded-2xl border-2 border-[#565c64]"
                       >
                         <Icon className="mb-0.5" size={20} />
-                        <div className="select-none">
-                          {block.label}
-                        </div>
+                        <div className="select-none">{block.label}</div>
                       </button>
                     );
                   })}
