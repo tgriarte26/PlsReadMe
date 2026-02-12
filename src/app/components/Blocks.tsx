@@ -171,9 +171,9 @@ Describe how this was tested.
               onClick={() => setOpenCategory(isOpen ? null : cat.category)}
               className="flex justify-between items-center cursor-pointer bg-[#30363d] p-5 text-white border-2 rounded-2xl mb-2 transition-all duration-200 hover:bg-[#3c444d]"
             >
-              <span className="font-semibold select-none">{cat.category}</span>
+              <span className="font-semibold select-none whitespace-nowrap truncate max-w-[80%]">{cat.category}</span>
               <span
-                className={`transition-transform duration-200 ${isOpen ? "rotate-45" : ""}`}
+                className={`transition-transform duration-200 shrink-0 ${isOpen ? "rotate-45" : ""}`}
               >
                 <Plus className="font-semibold" size={20} />
               </span>
