@@ -166,7 +166,7 @@ Describe how this was tested.
       {blockCategories.map((cat) => {
         const isOpen = openCategory === cat.category;
         return (
-          <div key={cat.category} className="mb-2">
+          <div key={cat.category} className="mt-1.5">
             <div
               onClick={() => setOpenCategory(isOpen ? null : cat.category)}
               className="flex justify-between items-center cursor-pointer bg-[#30363d] p-5 text-white border-2 rounded-2xl mb-2 transition-all duration-200 hover:bg-[#3c444d]"
