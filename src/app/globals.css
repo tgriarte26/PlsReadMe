@@ -1,9 +1,18 @@
 @import "tailwindcss";
-@import 'github-markdown-css/github-markdown.css';
+@import 'github-markdown-css/github-markdown-light.css';
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 @theme inline {

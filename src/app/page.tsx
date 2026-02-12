@@ -1,61 +1,46 @@
-import Image from "next/image";
-
-export default function Home() {
+"use client";
+import { useState } from "react";
+import MarkdownEditor from "@/MarkdownEditor";
+import MarkdownPreview from "@/MarkdownPreview";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Blocks from "./components/Blocks";
+export default function Page() {
+  const [markdownInput, setMarkdownInput] = useState<string>("");
+  const addBlock = ( markdown: string) => {
+    setMarkdownInput((prev) => prev + markdown);
+  }
   return (
-    <div className="font-mono items-center justify-items-center min-h-screen gap-16 bg-[#24292e]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <div className="flex gap-4 items-center sm:flex-row">
+    <div className="font-mono flex flex-col h-screen">
+      <div className="sticky top-0 z-10">
+        <Header markdownInput={markdownInput} />
+      </div>
+      <div className="flex flex-1 min-h-0">
+        <div className="float-left w-2/10 p-5 text-white bg-[#24292e] flex flex-col">
+          <div className="text-center text-2xl pb-2 select-none">Blocks</div>
+          <div className="flex-1 border-3 overflow-auto rounded hide-scrollbar">
+            <Blocks onAddBlock={addBlock}/>
+          </div>
         </div>
-      </main>
-
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4 text-white"
-          href="https://www.instagram.com/trevorgriarte/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Github
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4 text-white"
-          href="https://www.instagram.com/trevorgriarte/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          LinkedIn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4 text-white"
-          href="https://www.instagram.com/trevorgriarte/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Instagram
-        </a>
-      </footer>
+        <div className="float-left w-4/10 p-5 text-white bg-[#24292e] flex flex-col">
+          <div className="text-center text-2xl pb-2 select-none ">Editor</div>
+          <div className="flex-1 border-3 min-h-0 justify-items-center overflow-auto rounded">
+            <MarkdownEditor
+              markdownInput={markdownInput}
+              setMarkdownInput={setMarkdownInput}
+            />
+          </div>
+        </div>
+        <div className="float-left w-4/10 p-5 text-white bg-[#24292e] flex flex-col">
+          <div className="text-center text-2xl pb-2 select-none">Preview</div>
+          <div className="flex-1 border-3 min-h-0 justify-items-center overflow-auto">
+            <MarkdownPreview markdownInput={markdownInput} />
+          </div>
+        </div>
+      </div>
+      <div>
+        <Footer />
+      </div>
     </div>
-    
   );
 }
