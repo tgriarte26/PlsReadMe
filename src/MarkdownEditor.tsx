@@ -17,7 +17,7 @@ export default function MarkdownEditor({ markdownInput, setMarkdownInput}: Markd
         <div className="flex">
           <CodeMirror
             autoFocus 
-            className="w-[100%] min-h-screen border-2 border-white-300 overflow-x-hidden outline-white-300 resize-none text-[16px] text-black" 
+            className="w-[100%] min-h-screen border-2 border-white-300 overflow-x-hidden outline-white-300 resize-none text-[16px] text-black hide-scrollbar" 
             value={markdownInput}
             theme={githubDark}
             height="100vh"
