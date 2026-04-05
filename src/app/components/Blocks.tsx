@@ -169,7 +169,7 @@ Describe how this was tested.
           <div key={cat.category} className="mt-1.5">
             <div
               onClick={() => setOpenCategory(isOpen ? null : cat.category)}
-              className="flex justify-between items-center cursor-pointer bg-[#30363d] p-5 text-white border-2 rounded-2xl mb-2 transition-all duration-200 hover:bg-[#3c444d]"
+              className="flex justify-between items-center cursor-pointer bg-[#30363d] p-5 text-white border-2 rounded-2xl mb-2 transition-all duration-200 hover:bg-[#3c444d] shadow-[4px_4px_0px_0px_rgba(255,_255,_255,_1)]"
             >
               <span className="font-semibold select-none whitespace-nowrap truncate max-w-[80%]">{cat.category}</span>
               <span

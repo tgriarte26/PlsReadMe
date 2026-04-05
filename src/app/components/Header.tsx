@@ -55,13 +55,13 @@ export default function Header({ markdownInput }: HeaderProps) {
           <div className="flex float-right">
             <button
               onClick={handleCopy}
-              className="flex items-center font-mono mt-5 mb-5 px-4 py-2 bg-gray-300 hover:bg-gray-400 rounded select-none justify-between"
+              className="flex items-center font-mono mt-5 mb-5 px-4 py-2 bg-gray-300 hover:bg-gray-400 rounded select-none justify-between shadow-[4px_4px_0px_0px_rgba(209,_213,_220,_0.5)]"
             >
               {copied ? <Check className="font-black" size={26} /> : <Copy className="font-black" size={26} />}
             </button>
             <button
               onClick={downloadReadme}
-              className="font-mono m-5 px-4 py-2 bg-gray-300 rounded hover:bg-gray-400 select-none"
+              className="font-mono m-5 px-4 py-2 bg-gray-300 rounded hover:bg-gray-400 select-none shadow-[4px_4px_0px_0px_rgba(209,_213,_220,_0.5)]"
             >
               {downloaded ? <Check className="font-black"size={26} /> : <Download className="font-black" size={26} />}
             </button>
